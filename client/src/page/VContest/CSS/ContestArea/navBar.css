@@ -1,0 +1,31 @@
+.contestAreaContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+.contestAreaContainer .timer {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.contestAreaContainer ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+.contestAreaContainer li {
+  margin: 0 10px;
+}
+.contestAreaContainer a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.contestAreaContainer a:hover {
+  color: #0056b3;
+}/*# sourceMappingURL=navBar.css.map */

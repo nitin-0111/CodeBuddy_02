@@ -1,0 +1,38 @@
+.full-page {
+  display: grid;
+  align-items: center;
+}
+.full-page .logo {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1.38rem;
+  height: 2.5rem;
+}
+.full-page .form {
+  max-width: 400px;
+  border-top: 5px solid var(--primary-500);
+}
+.full-page h3 {
+  text-align: center;
+}
+.full-page p {
+  margin: 0;
+  margin-top: 1rem;
+  text-align: center;
+}
+.full-page .btn {
+  margin-top: 1rem;
+  background-color: var(--primary-700) !important;
+  font-weight: bold;
+  font-size: large;
+}
+.full-page .btn:hover {
+  background-color: #ec6fd9 !important;
+}
+.full-page .member-btn {
+  background: transparent;
+  border: transparent;
+  color: var(--primary-500);
+  cursor: pointer;
+  letter-spacing: var(--letterSpacing);
+}/*# sourceMappingURL=Register.css.map */

@@ -1,0 +1,63 @@
+.user-profile {
+  flex-direction: row;
+  .profile-card {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  
+    &:hover {
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+  
+    &.codeforces {
+      background-color: #f6f6f6;
+  
+      h3 {
+        color: #ff0000;
+      }
+    }
+  
+    &.leetcode {
+      background-color: #f0f8ff;
+  
+      h3 {
+        color: #0099ff;
+      }
+    }
+  
+    .profile {
+      h2 {
+        margin-bottom: 5px;
+      }
+  
+      h3 {
+        margin-bottom: 5px;
+        font-size: 18px;
+      }
+  
+      p {
+        margin: 2px 0;
+      }
+    }
+  
+    &.with-divider {
+      display: flex;
+      justify-content: space-between;
+  
+      .codeforces,
+      .leetcode {
+        flex-basis: 45%;
+  
+        &:first-child {
+          border-right: 1px solid #ccc;
+          padding-right: 10px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  
+  
+}

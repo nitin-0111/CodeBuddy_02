@@ -1,0 +1,80 @@
+.coding-contest-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  
+    .host-sites,
+    .today,
+    .duration {
+      flex: 1;
+    }
+  
+    h3 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+  
+    .host-sites ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+  
+      li {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        cursor: pointer;
+  
+        &.selected {
+          background-color: #c960fa;
+          color: #fff;
+        }
+  
+        img {
+          width: 40px;
+          height: 40px;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  
+    .today .toggle {
+      display: flex;
+      gap: 1rem;
+  
+      button {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        cursor: pointer;
+  
+        &.selected {
+          background-color: #c960fa;
+          color: #fff;
+        }
+      }
+    }
+  
+    .duration ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+  
+      li {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        cursor: pointer;
+  
+        &.selected {
+          background-color: #c960fa;
+          color: #fff;
+        }
+      }
+    }
+  }
+  

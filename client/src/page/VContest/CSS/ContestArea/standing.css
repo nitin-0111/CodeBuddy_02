@@ -1,0 +1,52 @@
+.contest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+.contest .timer {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.contest .standings {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 1rem;
+}
+.contest .standings .striped tbody .table-body tr td {
+  padding: 1rem 0.5rem;
+  text-align: center;
+}
+.contest .loadingState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  font-size: 1.2rem;
+}
+.contest .winner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+.contest .winner img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.contest .winner h4 {
+  margin: 0.5rem 0;
+}
+.contest .winner .contest-winner {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .contest .standings {
+    max-width: 100%;
+  }
+}/*# sourceMappingURL=standing.css.map */

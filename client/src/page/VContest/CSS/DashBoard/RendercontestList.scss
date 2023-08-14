@@ -1,0 +1,130 @@
+// $primary-600: #d425eb;
+// $primary-700: #d81dbc;
+// $primary-800: #af1e99;
+// $transition-duration: 0.3s;
+
+// .renderList {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-top: 50px;
+// }
+
+// .collection.with-header {
+//   width: 400px;
+//   border-radius: 8px;
+//   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+//   background-color: white;
+//   overflow: hidden; /* To hide overflowing content */
+// }
+
+// .collection-header {
+//   background-color: lightgray;
+//   padding: 12px;
+//   border-top-left-radius: 8px;
+//   border-top-right-radius: 8px;
+//   color: white;
+//   font-size: 18px;
+// }
+
+// .contest-item.card {
+//   padding: 16px;
+//   border-bottom: 1px solid #f2f2f2;
+//   transition: transform $transition-duration;
+//   position: relative; /* To position pseudo-elements */
+//   cursor: pointer;
+
+//   &:hover {
+//     transform: scale(1.02); /* Scale up on hover */
+//     background-color: $primary-800; /* Background color on hover */
+//     color: white; /* Text color on hover */
+//   }
+
+//   .card-content {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 12px;
+//     align-items: flex-start;
+
+//     .row {
+//       display: flex;
+//       align-items: center;
+//       gap: 8px;
+//     }
+
+//     .col-label {
+//       color: #555;
+//       font-size: 14px;
+//     }
+
+//     .col-data {
+//       font-size: 16px;
+//     }
+//   }
+
+//   .go-to-room-btn {
+//     background-color: $primary-700;
+//     color: white;
+//     border: none;
+//     border-radius: 4px;
+//     padding: 10px 20px;
+//     font-size: 16px;
+//     cursor: pointer;
+//     transition: background-color $transition-duration;
+
+//     &:hover {
+//       background-color: $primary-800; /* Button background color on hover */
+//     }
+//   }
+// }
+
+.renderList {
+  .collection-header {
+    h5 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+  }
+
+  .contest-item {
+    margin: 15px 0;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-content {
+      .row {
+        margin: 5px 0;
+
+        .col-label {
+          font-weight: bold;
+        }
+
+        .col-data {
+          margin-left: 10px;
+        }
+      }
+
+      .go-to-room-btn {
+        padding: 5px 10px;
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+}

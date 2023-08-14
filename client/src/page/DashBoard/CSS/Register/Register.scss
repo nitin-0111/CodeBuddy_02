@@ -1,0 +1,49 @@
+$primary-700: var(--primary-700);
+.full-page {
+  display: grid;
+  align-items: center;
+
+  .logo {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1.38rem;
+    height: 2.5rem;
+  }
+
+  .form {
+    max-width: 400px;
+    border-top: 5px solid var(--primary-500); // Replace with the desired color variable
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  $custom-hover-color: lighten(#d81dbc, 20%);
+  .btn {
+    margin-top: 1rem;
+    background-color: $primary-700 !important;
+    font-weight: bold;
+    font-size: large;
+
+    &:hover {
+      background-color: $custom-hover-color !important;
+    }
+  }
+
+  .member-btn {
+    background: transparent;
+    border: transparent;
+    color: var(--primary-500); // Replace with the desired color variable
+    cursor: pointer;
+    letter-spacing: var(
+      --letterSpacing
+    ); // Replace with the desired letterSpacing value
+  }
+}

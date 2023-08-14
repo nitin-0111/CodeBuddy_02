@@ -1,0 +1,45 @@
+$fluid-width: var(--fluid-width);
+$max-width: var(--max-width);
+$nav-height: var(--nav-height);
+$primary-700: var(--primary-700);
+$grey-600: var(--grey-600);
+
+.page {
+  min-height: calc(100vh - $nav-height);
+  display: grid;
+  align-items: center;
+  margin-top: -3rem;
+
+  h1 {
+    font-weight: 700;
+    span {
+      color: $primary-700;
+    }
+  }
+
+  p {
+    color: $grey-600;
+  }
+
+  .main-img {
+    display: none;
+  }
+
+  $custom-hover-color: lighten(#d81dbc, 20%);
+  .waves-effect.waves-light.btn {
+    background-color: $primary-700 !important;
+
+    &:hover {
+      background-color: $custom-hover-color !important;
+    }
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+
+    .main-img {
+      display: block;
+    }
+  }
+}

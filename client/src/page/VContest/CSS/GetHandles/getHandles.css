@@ -1,0 +1,69 @@
+.fullscreen {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+
+.content {
+  text-align: center;
+}
+.content h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+.content .heading {
+  color: #c960fa;
+}
+.content p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+.content form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content form input[type=text] {
+  padding: 10px;
+  border: 2px solid #c960fa;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+.content form input[type=text]::-moz-placeholder {
+  color: #999;
+}
+.content form input[type=text]::placeholder {
+  color: #999;
+}
+.content form input[type=text]:focus {
+  border-color: #333;
+}
+.content form button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #c960fa;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease-in-out;
+}
+.content form button:hover {
+  background-color: #8b39d5;
+}
+.content form button i {
+  margin-right: 5px;
+}/*# sourceMappingURL=getHandles.css.map */

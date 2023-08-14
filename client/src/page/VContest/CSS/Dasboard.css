@@ -1,0 +1,27 @@
+.collection-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .card-label {
+    font-weight: bold;
+  }
+  
+  .card-data {
+    font-size: 16px;
+  }
+  
+  .material-icons {
+    color: #2196f3;
+  }
+  
+  .material-icons:hover {
+    color: #1976d2;
+  }
+  

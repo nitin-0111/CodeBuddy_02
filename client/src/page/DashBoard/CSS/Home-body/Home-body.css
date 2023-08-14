@@ -1,0 +1,21 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+.home-container .section {
+  margin-bottom: 40px;
+  max-width: 600px;
+  text-align: center;
+}
+.home-container .section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+.home-container .section p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}/*# sourceMappingURL=Home-body.css.map */

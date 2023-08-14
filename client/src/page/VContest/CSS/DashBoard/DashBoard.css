@@ -1,0 +1,62 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dashboard .formToJoinViaInp {
+  width: 100%;
+  max-width: 40rem;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.dashboard .formToJoinViaInp:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+.dashboard .formToJoinViaInp .input-field {
+  position: relative;
+}
+.dashboard .formToJoinViaInp .input-field input.validate {
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  background-color: transparent;
+}
+.dashboard .formToJoinViaInp .input-field input.validate:focus {
+  outline: none;
+  border-bottom: 1px solid #007bff;
+}
+.dashboard .formToJoinViaInp .input-field label {
+  font-size: 14px;
+  color: #555;
+}
+.dashboard .formToJoinViaInp .input-field .tooltipped {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.dashboard .formToJoinViaInp .input-field .tooltipped i.material-icons {
+  color: #777;
+}
+.dashboard .formToJoinViaInp .input-field button[type=submit],
+.dashboard .formToJoinViaInp .input-field button.create-contest-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #b7167c;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.dashboard .formToJoinViaInp .input-field button[type=submit]:hover,
+.dashboard .formToJoinViaInp .input-field button.create-contest-btn:hover {
+  background-color: #0056b3;
+}/*# sourceMappingURL=DashBoard.css.map */

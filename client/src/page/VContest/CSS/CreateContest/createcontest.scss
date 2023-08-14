@@ -1,0 +1,147 @@
+// Import Material Icons font
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+$primary-600: #d425eb;
+$primary-700: #d81dbc;
+$primary-800: #af1e99;
+$transition-duration: 0.3s;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Set the form width to 100% */
+
+    .num {
+      margin-top: 20px;
+
+      label {
+        font-size: 16px;
+      }
+
+      .range-field {
+        input {
+          padding: 8px;
+          width: 60px;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+
+          &:focus {
+            outline: none;
+            border-color: $primary-700;
+          }
+        }
+      }
+    }
+
+    .range {
+      margin-top: 20px;
+
+      .minMaxRange {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        label {
+          font-size: 16px;
+        }
+
+        input {
+          padding: 8px;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+
+          &:focus {
+            outline: none;
+            border-color: $primary-700;
+          }
+        }
+      }
+    }
+
+    label[for='DateTimePicker'] {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    .DateTimePicker {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+
+      input {
+        padding: 8px;
+        width: 200px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+
+        &:focus {
+          outline: none;
+          border-color: $primary-700;
+        }
+      }
+    }
+
+    .submitButton {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      button {
+        background-color: $primary-700;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color $transition-duration;
+
+        &:hover {
+          background-color: $primary-800; /* Button background color on hover */
+        }
+      }
+    }
+  }
+
+  > div {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    button {
+      background-color: $primary-700;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color $transition-duration;
+
+      &:hover {
+        background-color: $primary-800; /* Button background color on hover */
+      }
+    }
+  }
+
+  // Media query for screens larger than 768px (desktop size)
+  @media (min-width: 769px) {
+    form {
+      width: 600px; // Adjust the form width as needed for larger screens
+    }
+  }
+}

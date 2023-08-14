@@ -1,0 +1,36 @@
+.Container {
+  background: var(--primary-800);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Container .Logo {
+  color: #eeeeee;
+  font-size: 30px;
+  font-weight: bold;
+ 
+}
+.Container .Logo a{
+  color: white;
+}
+.Container ul {
+  display: flex;
+  gap: 10px;
+}
+.Container ul li {
+  list-style: none;
+}
+.Container ul li a {
+  color: #eeeeee;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+.Container ul li a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.Container ul li .btn-color {
+  background: var(--primary-900);
+}/*# sourceMappingURL=Header.css.map */
