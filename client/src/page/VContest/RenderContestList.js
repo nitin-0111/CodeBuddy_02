@@ -18,9 +18,9 @@ const RenderContestList = ({ List, handle }) => {
                 <div className="col col-data">{contest.CreatedBy}</div>
               </div>
               <div className="row valign-wrapper">
-                <div className="col col-label">Time / Date:</div>
+                <div className="col col-label">Time   Date:</div>
                 <div className="col col-data">
-                  {formatTimestamp(contest.Start_time).time} /{" "}
+                  {formatTimestamp(contest.Start_time).time} {" "}
                   {formatTimestamp(contest.Start_time).date}
                 </div>
               </div>
@@ -34,7 +34,7 @@ const RenderContestList = ({ List, handle }) => {
                   onClick={() =>
                     naviagte(`/ContestArea/${contest.RoomId}/${handle}`)
                   }>
-                  Go to Room
+                  Go To This Contest Room
                 </button>
               </div>
             </div>

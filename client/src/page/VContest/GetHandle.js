@@ -48,39 +48,14 @@ const GetHandle = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        // <div>
-        //   <div className="fullscreen">
-        //     <div className="content">
-        //       <h1>Interactive Practice on </h1>
-        //       <h1 className="heading">CodeBuddy</h1>
-        //       <p>BLAST YOUR CODE</p>
-        //       <form>
-        //         <input
-        //           type="text"
-        //           name="handle"
-        //           id
-        //           placeholder="Codeforces Handle"
-        //           required
-        //           onChange={(e) => {
-        //             setUserName(e.target.value);
-        //           }}
-        //         />
-        //         <button type="submit" onClick={getData}>
-        //           {loader}
-        //           {/* <i class="material-icons">arrow_forward</i> */}
-        //           {/* button */}
-        //         </button>
-        //       </form>
-        //     </div>
-        //   </div>
-        // </div>
+      
 
         <div>
           <div className="fullscreen">
             <div className="content">
-              <h1>Interactive Practice on </h1>
+              <h1>Practice interactively </h1>
               <h1 className="heading">CodeBuddy</h1>
-              <p>BLAST YOUR CODE</p>
+              <p>Add Your CodeForces Handle...</p>
               <form>
                 <input
                   type="text"

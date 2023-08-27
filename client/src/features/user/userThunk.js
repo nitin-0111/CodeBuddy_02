@@ -19,12 +19,4 @@ export const loginUserThunk = async (url, user, thunkAPI) => {
   }
 };
 
-// export const clearStoreThunk = async (message, thunkAPI) => {
-//   try {
-//     thunkAPI.dispatch(logoutUser(message));
-    
-//     return Promise.resolve();
-//   } catch (error) {
-//     return Promise.reject();
-//   }
-// };
+

@@ -76,7 +76,7 @@ const imageMap = {
     "geeksforgeeks.org": geeksforgeeks_png,
     "codingcompetitions.withgoogle.com": google_png,
     "topcoder.com": topcoder_png,
-    // Add more host sites here
+    
   };
 const Contest = () => {
   const [Data, setData] = useState(null);
@@ -143,7 +143,7 @@ const Contest = () => {
 
      
 
-      {/* Options for host, today, duration */}
+      
       {loading ? (
         <Loading />
       ) : (

@@ -9,10 +9,6 @@
   color: #eeeeee;
   font-size: 30px;
   font-weight: bold;
- 
-}
-.Container .Logo a{
-  color: white;
 }
 .Container ul {
   display: flex;

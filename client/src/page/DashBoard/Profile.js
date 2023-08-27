@@ -5,14 +5,14 @@ import styled from "styled-components";
 import { FormRow } from "../../components";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import "./CSS/Profile/ProfileRender.css";
 import { localeData } from "moment";
-import "../DashBoard/CSS/Table/Table.css";
-import "../DashBoard/CSS/Profile/ProfileRender.css";
+
+import "./CSS/Profile/ProfileRender.css";
+import "../DashBoard/CSS/Table/Table.css"; // Table
+import "../DashBoard/CSS/Profile/ProfileRender.css"; //
 
 import "materialize-css";
 
-// import React from 'react';
 import M from "materialize-css/dist/js/materialize.min.js";
 
 const Profile = () => {
@@ -44,6 +44,7 @@ const Profile = () => {
     e.preventDefault();
     const { codeforcesId, leetcodeId } = userHandle;
     if (!codeforcesId && !leetcodeId) {
+      setIsLoading(false);
       toast.error("Please fill the required fields.");
       return;
     }
@@ -105,7 +106,8 @@ const Profile = () => {
             />
             <button
               className="btn btn-block waves-effect waves-light"
-              disabled={isLoading}>
+              disabled={isLoading}
+              style={{ backgroundColor: "#b7167c" }}>
               <span>Submit</span> <IoSend />
             </button>
           </form>
@@ -132,23 +134,23 @@ const Profile = () => {
       </div>
 
       <div className="contest-history">
-          <div className="codeforces">
-            {codeforceData && (
-              <div>
-                <h4> Codeforces Contest History: </h4>
-                <Table data={codeforceData.Contest} />
-              </div>
-            )}
-          </div>
-          <div className="leetcode">
-            {leetcodeData && (
-              <div>
-                <h4> Leetcode Contest History: </h4>
-                <Table data={leetcodeData.Contest} />
-              </div>
-            )}
-          </div>
+        <div className="codeforces">
+          {codeforceData && (
+            <div>
+              <h4> Codeforces Contest History: </h4>
+              <Table data={codeforceData.Contest} />
+            </div>
+          )}
         </div>
+        <div className="leetcode">
+          {leetcodeData && (
+            <div>
+              <h4> Leetcode Contest History: </h4>
+              <Table data={leetcodeData.Contest} />
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
@@ -192,63 +194,6 @@ const ProfileRender = ({ data }) => {
     </div>
   );
 };
-
-// const Table = ({ data }) => {
-//   const ChangeIcon = styled.i`
-//     color: ${(props) => props.color};
-//   `;
-
-//   return (
-//     <div>
-//       {data && (
-//         <table className="">
-//           <thead>
-//             <tr>
-//               <th>Contest</th>
-//               <th>Time</th>
-//               <th>Rank</th>
-//               <th>Change</th>
-//               <th>Current Rating</th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             {data.map((contest) => {
-//               const isPositiveChange = contest.change > 0;
-//               const changeColor = isPositiveChange ? "green" : "red";
-//               const textColor = isPositiveChange ? "green-text" : "red-text";
-//               const changeIcon = isPositiveChange
-//                 ? "arrow_drop_up"
-//                 : "arrow_drop_down";
-
-//               return (
-//                 <tr key={contest.name}>
-//                   <td>{contest.name}</td>
-//                   <td>{contest.time}</td>
-//                   <td>{contest.rank}</td>
-//                   <td>
-//                     <div style={{ display: "flex", alignItems: "center" }}>
-//                       <ChangeIcon
-//                         color={changeColor}
-//                         className="material-icons">
-//                         {changeIcon}
-//                       </ChangeIcon>
-//                       <span className={textColor}>
-//                         {Math.abs(contest.change)}
-//                       </span>
-//                     </div>
-//                   </td>
-//                   <td>{contest.cur_rating}</td>
-//                 </tr>
-//               );
-//             })}
-//           </tbody>
-//         </table>
-//       )}
-//     </div>
-//   );
-// };
-
-// Table.js
 
 const Table = ({ data }) => {
   const isPositiveChange = (change) => change > 0;

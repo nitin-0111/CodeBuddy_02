@@ -17,6 +17,8 @@ import ProtectedRoute from "./page/ProtectedRoute";
 import Profile from "./page/DashBoard/Profile";
 import Contest from "./page/Contest/test";
 
+
+// V-contest routes
 import {
   GetHandle,
   Dashboard,
@@ -36,19 +38,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          }>
+        <Route path="/" element={<ProtectedRoute>   <Home />   </ProtectedRoute>}>
           <Route index path="/" element={<Body />} />
 
           <Route path="profile" element={<Profile />} />
           <Route path="contest-list" element={<Contest />} />
 
-          {/* v-contest routes  */}
+          {/* v_contest creatation  routes */}
           <Route path="/vcontest" element={<VContest />}>
             <Route index path="getHandle" element={<GetHandle />} />
             <Route path="dashboard/:handle" element={<Dashboard />} />
@@ -58,11 +54,7 @@ function App() {
 
           <Route
             path="/ContestArea/:RoomId/:handle"
-            element={
-              <ProtectedContestRoute>
-                <ContestPage />
-              </ProtectedContestRoute>
-            }>
+            element={ <ProtectedContestRoute><ContestPage /></ProtectedContestRoute>}>
             <Route index element={<Lobby />} />
             <Route path="ContestArea" element={<ContestArea />}>
               <Route index path="problems" element={<Problems />} />

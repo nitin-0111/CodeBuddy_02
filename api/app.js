@@ -5,6 +5,7 @@ const express = require("express");
 const app = express();
 
 // rest of the package
+
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 
@@ -16,20 +17,25 @@ const cors = require("cors");
 // database
 const connectDB = require("./db/connect");
 app.use(morgan("tiny"));
-//routers
+
+
+//routers moudles (importing )
 const authRouter = require("./routes/authRoutes");
 const userContestRouter = require("./routes/userContestinfo");
 const vContestRouter=require('./routes/vContestRoutes')
-// const testRouter=require('./routes')
+
 // middleware
 const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 
+// below
 app.set("trust proxy", 1);
+
 app.use(
   rateLimiter({
     windowMs: 15 * 60 * 1000,
     max: 60,
+    
   })
 );
 app.use(helmet());
@@ -59,4 +65,19 @@ const start = async () => {
     console.log(err);
   }
 };
+
 start();
+
+
+
+
+/*
+app.set("trust proxy", 1);
+
+to distribute incoming traffic across multiple instances for better performance and reliability
+and When a client sends a request to your application, the load balancer forwards that request 
+to one of your Express app instances. However, the load balancer modifies certain headers,
+ including the X-Forwarded-For header, to keep track of the original client's IP address.
+  Without trusting the proxy, your Express app might mistakenly consider the load balancer's
+   IP address as the client's IP.
+ */

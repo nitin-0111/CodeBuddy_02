@@ -5,12 +5,13 @@ const {
   getLeecodeData,
   getCodeforcesData,
 } = require("../Services/getContestData");
+
 const User = require("../models/User");
 
 const getContestData = async (req, res) => {
   let { leetcodeId, codeforceId, userId } = req.query;
     
-  console.log(req.query,leetcodeId,codeforceId);
+  // console.log(req.query,leetcodeId,codeforceId);
   // let user = await User.findOne({ _id: userId });
   // if(!user){
   //   console.log('no useer');

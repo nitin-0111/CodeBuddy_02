@@ -14,4 +14,4 @@ root.render(
     <Provider store={store}>
       <App tab='home' />
     </Provider>
-  );
+);

@@ -43,23 +43,25 @@ const Dashboard = () => {
             }}
           />
           <label htmlFor="RoomId">Room ID</label>
-         
-          <button type="submit">Go to Room</button>
-          <button onClick={() => naviagte(`/vcontest/createContest/${handle}`)}>
-            + Create Contest
-          </button>
+          <div
+            className="bnt-space"
+            style={{ display: "flex", justifyContent: "space-between" }}>
+            <button type="submit">Go to Room</button>
+
+            <button
+              onClick={() => naviagte(`/vcontest/createContest/${handle}`)}>
+              + Create Contest
+            </button>
+          </div>
         </div>
       </form>
 
-     {/* <div>
+      {/* <div>
 
      </div> */}
       {ContestList && <RenderContestList List={ContestList} handle={handle} />}
-     
     </div>
   );
 };
-
-
 
 export default Dashboard;

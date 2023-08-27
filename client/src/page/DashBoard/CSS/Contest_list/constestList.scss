@@ -30,7 +30,7 @@
         cursor: pointer;
   
         &.selected {
-          background-color: #c960fa;
+          background-color: #a760c887;
           color: #fff;
         }
   
@@ -42,22 +42,44 @@
       }
     }
   
+    // .today .toggle {
+    //   display: flex;
+    //   gap: 1rem;
+  
+    //   button {
+    //     padding: 0.5rem 1rem;
+    //     border: 1px solid #ddd;
+    //     border-radius: 0.5rem;
+    //     cursor: pointer;
+  
+    //     &.selected {
+    //       background-color: #c960fa;
+    //       color: #fff;
+    //     }
+    //   }
+    // }
     .today .toggle {
       display: flex;
       gap: 1rem;
-  
-      button {
-        padding: 0.5rem 1rem;
-        border: 1px solid #ddd;
-        border-radius: 0.5rem;
-        cursor: pointer;
-  
-        &.selected {
-          background-color: #c960fa;
-          color: #fff;
-        }
-      }
     }
+    
+    .today .toggle button {
+      padding: 0.5rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+    
+    .today .toggle button.selected {
+      background-color: #a760c887;
+      color: #fff;
+    }
+    
+    .today .toggle button:not(.selected) {
+      background-color: white; /* Set the default background color */
+      color: #000; /* Set the default text color */
+    }
+    
   
     .duration ul {
       list-style: none;
@@ -71,7 +93,7 @@
         cursor: pointer;
   
         &.selected {
-          background-color: #c960fa;
+          background-color:#a760c887;
           color: #fff;
         }
       }

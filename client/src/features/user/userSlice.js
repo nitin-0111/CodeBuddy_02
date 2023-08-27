@@ -6,7 +6,10 @@ import {
   getUserFromLocalStorage,
   removeUserFromLocalStorage,
 } from "../../utils/LocalStorage";
-import { loginUserThunk, registerUserThunk,clearStoreThunk} from "./userThunk";
+
+
+import { loginUserThunk, registerUserThunk} from "./userThunk";
+
 const initialState = {
   isLoading: false,
   user: getUserFromLocalStorage(),
@@ -18,6 +21,7 @@ export const registerUser = createAsyncThunk(
     return registerUserThunk("/auth/register", user, thunkAPI);
   }
 );
+
 export const loginUser = createAsyncThunk(
   "user/loginUser",
   async (user, thunkAPI) => {
@@ -69,7 +73,7 @@ const userSlice = createSlice({
     },
     [loginUser.rejected]: (state, { payload }) => {
       state.isLoading = false;
-      toast.error(payload);
+      toast.error({ msg: payload });
     },
   },
 });

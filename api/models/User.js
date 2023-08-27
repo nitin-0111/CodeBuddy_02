@@ -41,12 +41,16 @@ const UserSchema=new mongoose.Schema({
         required: [true, 'Please provide password'],
         minlength: 6,
       },
+      
       verificationToken: String,
       isVerified: {
         type: Boolean,
         default: false,
       },
+      // when email get varified
       verified: Date,
+
+      // for reset purpose
       passwordToken: {
         type: String,
       },
@@ -54,6 +58,8 @@ const UserSchema=new mongoose.Schema({
         type: Date,
       },
 })
+
+// middle-ware of mongoos
 UserSchema.pre('save', async function(){
 
     if(!this.isModified('password'))return;
@@ -61,13 +67,15 @@ UserSchema.pre('save', async function(){
     this.password=await bcrypt.hash(this.password,salt);
 })
 
+
+// custome method to compare passWord
+UserSchema.methods.comparePassword = async function (canditatePassword) {
+  const isMatch = await bcrypt.compare(canditatePassword, this.password);
+  return isMatch;
+};
+
+// ? i think it is not used
 UserSchema.methods.createJWT= function(){
     return jwt
 }
-
-UserSchema.methods.comparePassword = async function (canditatePassword) {
-    const isMatch = await bcrypt.compare(canditatePassword, this.password);
-    return isMatch;
-  };
-
 module.exports=mongoose.model('User',UserSchema);

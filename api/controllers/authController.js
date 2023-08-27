@@ -1,6 +1,7 @@
 const User = require("../models/User");
 const Token = require("../models/Token");
 const { StatusCodes } = require("http-status-codes");
+
 const CustomError = require("../errors");
 const {
   attachCookiesToResponse,
@@ -9,11 +10,13 @@ const {
   sendResetPasswordEmail,
   createHash,
 } = require("../utils");
+
 const crypto = require("crypto");
 // Register
+
 const register = async (req, res) => {
   const { email, name, password } = req.body;
-  console.log("emmm", email, name, password);
+  // console.log("emmm", email, name, password);
   const emailAlreadyExists = await User.findOne({ email });
   if (emailAlreadyExists) {
     throw new CustomError.BadRequestError("Email already exists");
@@ -38,12 +41,12 @@ const register = async (req, res) => {
       verificationToken: user.verificationToken,
       origin,
     });
-    console.log("outside ");
+   
     res.status(StatusCodes.CREATED).json({
       msg: "Success !pls check your email to verify",
     });
   } catch (error) {
-    console.log("error SendEmail ", error);
+    console.log("error in SendEmail ", error);
   }
 };
 
