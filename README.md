@@ -24,9 +24,9 @@ A comprehensive web application built with the MERN stack, designed to be your p
 
 - **Seamless Assistance**: Codebuddy is here to provide you with the best competitive programming experience.
 
-- **Authentication Done Right**: We've implemented a secure authentication workflow with features like email verification and password reset for your peace of mind.
+- **Authentication Done Right**: I have implemented a secure authentication workflow with features like email verification and password reset for your peace of mind.
 
-- **Stay Up-to-Date**: Our contest list feature, powered by the CLIST API, keeps you informed about upcoming contests, so you never miss an opportunity.
+- **Stay Up-to-Date**:  Contest list feature, powered by the CLIST API, keeps you informed about upcoming contests, so you never miss an opportunity.
 
 - **Virtual Contests**: Challenge your friends and fellow programmers with our virtual contest functionality, promoting healthy competition and growth.
 
