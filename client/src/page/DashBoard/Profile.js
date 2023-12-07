@@ -43,7 +43,7 @@ const Profile = () => {
     setIsLoading(true);
     e.preventDefault();
     const { codeforcesId, leetcodeId } = userHandle;
-    if (!codeforcesId && !leetcodeId) {
+    if (!codeforcesId || !leetcodeId) {
       setIsLoading(false);
       toast.error("Please fill the required fields.");
       return;

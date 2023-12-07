@@ -74,8 +74,6 @@ UserSchema.methods.comparePassword = async function (canditatePassword) {
   return isMatch;
 };
 
-// ? i think it is not used
-UserSchema.methods.createJWT= function(){
-    return jwt
-}
+
+
 module.exports=mongoose.model('User',UserSchema);

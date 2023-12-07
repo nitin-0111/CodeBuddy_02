@@ -83,13 +83,13 @@ const categorizeProblem = async (problems, min, max, num) => {
   problems.sort((a, b) => a[0] - b[0]);
  
 
-  // 4:3:2
+  // 5:3:2
   let hardsz = (num * 2) / 10;
   hardsz = Math.floor(hardsz);
   let midsz = (num * 3) / 10;
   midsz = Math.floor(midsz);
   let easysz = num - hardsz - midsz;
-  // 4:3:2
+  // 5:3:2
   let rng = max - min;
   let easylt = min + rng * 0.4;
   let midlt = min + rng * 0.7;
@@ -103,13 +103,14 @@ const categorizeProblem = async (problems, min, max, num) => {
  
     return [...easyprob, ...midprob, ...hardprob];
 };
+
 const linear = (problems, l, r, sz) => {
   let ques = [];
   let index=problems.map(problem => problem[0]);
 
 
   let step = (r - l) / sz;
-  for (let i = 0; i < sz; i++) {
+  for (let i = 0; i < sz; i++){
     const rt = l + step * i;
     
     let ind=binarySearch(index,rt);

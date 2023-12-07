@@ -1,16 +1,28 @@
+require("dotenv").config();
 const nodemailer = require('nodemailer');
 const nodemailerConfig = require('./nodemailerConfig');
-
+const Mailgen = require('mailgen')
 const sendEmail = async ({ to, subject, html }) => {
-  let testAccount = await nodemailer.createTestAccount();
+  
+  const EMAIL = process.env.EMAIL;
+  const PASS = process.env.EMAIL_PASS;
+  let config = {
+    service: "gmail",
+    auth: {
+      user: EMAIL,
+      pass: PASS
+    }
+  };
+  let transporter = nodemailer.createTransport(config);
+  let message = {
+    from: EMAIL,
+    to: to,
+    subject: subject,
+    html: html
+};
+return await transporter.sendMail(message);
 
-  const transporter = nodemailer.createTransport(nodemailerConfig);
-  return await transporter.sendMail({
-    from: '"free content" <freecontent09983@gmail.com>', // sender address
-    to,
-    subject,
-    html,
-  });
+
 };
 
 module.exports = sendEmail;

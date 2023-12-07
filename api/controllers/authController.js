@@ -1,3 +1,4 @@
+require("dotenv").config();
 const User = require("../models/User");
 const Token = require("../models/Token");
 const { StatusCodes } = require("http-status-codes");
@@ -12,7 +13,8 @@ const {
 } = require("../utils");
 
 const crypto = require("crypto");
-// Register
+
+//Register
 
 const register = async (req, res) => {
   const { email, name, password } = req.body;
@@ -25,6 +27,8 @@ const register = async (req, res) => {
   const isFirstAccount = (await User.countDocuments({})) === 0;
   const role = isFirstAccount ? "admin" : "user";
   const verificationToken = crypto.randomBytes(40).toString("hex");
+
+
   const user = await User.create({
     name,
     email,
@@ -32,8 +36,8 @@ const register = async (req, res) => {
     role,
     verificationToken,
   });
-  console.log(user);
-  const origin = "http://localhost:3000"; // frontend Url
+ 
+  const origin = process.env.FRONTEND_URL // frontend Url
   try {
     await sendVerificationEmail({
       name: user.name,
@@ -62,6 +66,7 @@ const verifyEmail = async (req, res) => {
   (user.isVerified = true), (user.verified = Date.now());
   user.verificationToken = "";
   await user.save();
+  
   res.status(StatusCodes.OK).json({ msg: "Email Verified" });
 };
 

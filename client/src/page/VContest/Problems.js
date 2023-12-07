@@ -28,7 +28,7 @@ const Problems = () => {
             problems.map((item, ind) => (
               <div key={item[2]}>
                 <div className="card card1">
-                  <div className="container">{/* <img src={wrA} alt /> */}</div>
+                  <div className="container"></div>
                   <div className="details">
                     <h3>{item[2]}</h3>
                     <a

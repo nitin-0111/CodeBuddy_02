@@ -96,7 +96,7 @@ const Contest = () => {
 
  
 
-  const fetchData = () => {
+  const fetchData = async() => {
     setLoading(true);
 
     const host = filterOptions.host;

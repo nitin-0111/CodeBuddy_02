@@ -40,6 +40,7 @@ const createRoom = async (req, res) => {
   }
 };
 
+
 const getRoomProbs = async (req, res) => {
   const { RoomId } = req.params;
   // console.log(RoomId,req.query)
@@ -103,7 +104,7 @@ const getContestList = async (req, res) => {
     console.log(handle, data);
     res.status(StatusCodes.OK).json(data);
   } catch (error) {
-    console.log(" eeeasdff", error);
+    console.log(" error", error);
   }
 };
 module.exports = {
