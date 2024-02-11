@@ -95,18 +95,22 @@ const Register = () => {
           {isLoading ? "loading..." : "submit"}
         </button>
         {/* Demo button */}
-        {/* <button
+        <button
           type="button"
           className="btn btn-block btn-hipster"
           disabled={isLoading}
-          // onClick={() =>
-          //   dispatch(
-          //     loginUser({ email: "testUser@test.com", password: "secret" })
-          //   )
-          // }
-        > */}
-          {/* {isLoading ? "loading..." : "demo app"}
-        </button> */}
+          onClick={() => {
+            dispatch(loginUser({ email: "test@abc.in", password: "123456" }));
+            setTimeout(() => {
+              navigate("/");
+            }, 2000);
+
+            return;
+          }
+          }
+        >
+          {isLoading ? "loading..." : "Demo-User"}
+        </button>
         <p>
           {values.isMember ? "Not a member yet?" : "Already a member?"}
           <button type="button" onClick={toggleMember} className="member-btn">

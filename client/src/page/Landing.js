@@ -2,13 +2,19 @@ import { toast } from "react-toastify";
 import main from "../assets/images/main_welcome.svg";
 import Wrapper from "../assets/wrappers/LandingPage";
 import { Logo } from "../components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./DashBoard/CSS/LandingPage/Landing.css";
+import { loginUser } from "../features/user/userSlice";
+import { useDispatch, useSelector } from "react-redux";
 const Landing = () => {
+  const {  isLoading } = useSelector((store) => store.user);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <div>
       <div className="container page">
-      
+
         <div className="info">
           <h1>
             Welcome to <span>CodeBuddy! </span>
@@ -20,10 +26,23 @@ const Landing = () => {
             programming potential. Are you ready to dominate the coding arena?
             Sign in or create an account now to embark on your coding adventure!
           </p>
-
+          <div style={{ display: 'flex', alignItems: 'center', margin:'10px' }}>
           <Link to="/register" className="btn waves-light waves-effect">
             Login/Register
           </Link>
+          <button 
+          disabled={isLoading}
+          onClick={() => {
+            dispatch(loginUser({ email: "test@abc.in", password: "123456" }));
+            setTimeout(() => {
+              navigate("/");
+            }, 2000);
+
+            return;
+          }} className="btn waves-light waves-effect">
+            Demo-User
+          </button>
+          </div>
         </div>
         <img src={main} alt="welcome img" className="img main-img" />
       </div>
