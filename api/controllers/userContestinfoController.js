@@ -28,7 +28,7 @@ const getContestData = async (req, res) => {
   // }
   // await user.save();
 
-  let data = { leetcode: {}, codeforce: {} };
+  let data = { leetcode: null, codeforce:null };
   if (leetcodeId) {
     data.leetcode = await getLeecodeData(leetcodeId);
   }

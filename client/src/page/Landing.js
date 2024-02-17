@@ -6,8 +6,9 @@ import { Link, useNavigate } from "react-router-dom";
 import "./DashBoard/CSS/LandingPage/Landing.css";
 import { loginUser } from "../features/user/userSlice";
 import { useDispatch, useSelector } from "react-redux";
+import Loading from "../components/CircularLoader";
 const Landing = () => {
-  const {  isLoading } = useSelector((store) => store.user);
+  const { isLoading } = useSelector((store) => store.user);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -26,25 +27,27 @@ const Landing = () => {
             programming potential. Are you ready to dominate the coding arena?
             Sign in or create an account now to embark on your coding adventure!
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', margin:'10px' }}>
-          <Link to="/register" className="btn waves-light waves-effect">
-            Login/Register
-          </Link>
-          <button 
-          disabled={isLoading}
-          onClick={() => {
-            dispatch(loginUser({ email: "test@abc.in", password: "123456" }));
-            setTimeout(() => {
-              navigate("/");
-            }, 2000);
+          <div style={{ display: 'flex', alignItems: 'center', margin: '10px' }}>
+            <Link to="/register" className="btn waves-light waves-effect" style={{ marginRight: '10px', fontWeight: 'bold' }}>
+              Login/Register
+            </Link>
 
-            return;
-          }} className="btn waves-light waves-effect">
-            Demo-User
-          </button>
+
+            <button
+              disabled={isLoading}
+              onClick={() => {
+                dispatch(loginUser({ email: "test@abc.in", password: "123456" }));
+                setTimeout(() => {
+                  navigate("/");
+                }, 2000);
+
+                return;
+              }} className="btn waves-light waves-effect" style={{ fontWeight: 'bold' }}>
+              {isLoading ? "Loading... " : "Demo-User"}
+            </button>
           </div>
         </div>
-        <img src={main} alt="welcome img" className="img main-img" />
+        <img src={main} alt="welcome img" className="img main-img"  />
       </div>
     </div>
   );

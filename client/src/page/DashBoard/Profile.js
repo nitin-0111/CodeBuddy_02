@@ -14,11 +14,13 @@ import "../DashBoard/CSS/Profile/ProfileRender.css"; //
 import "materialize-css";
 
 import M from "materialize-css/dist/js/materialize.min.js";
+import { BASE_URL } from "../../env";
+import { codeforces_png, leetcode_png } from "../Contest/contest_images";
 
 const Profile = () => {
   const [userHandle, setUserHandle] = useState({
-    codeforcesId: null,
-    leetcodeId: null,
+    codeforcesId: "",
+    leetcodeId: "",
   });
   // const []
   const [codeforceData, setCodeforceData] = useState(null);
@@ -29,13 +31,13 @@ const Profile = () => {
   // let codeforceData, leetcodeData;
 
   useEffect(() => {
-    console.log(codeforceData?.userName);
+    // console.log(codeforceData?.userName);
   }, [codeforceData]);
 
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    console.log(name, value);
+    // console.log(name, value);
     setUserHandle({ ...userHandle, [name]: value });
   };
 
@@ -43,14 +45,14 @@ const Profile = () => {
     setIsLoading(true);
     e.preventDefault();
     const { codeforcesId, leetcodeId } = userHandle;
-    if (!codeforcesId || !leetcodeId) {
+    if (!codeforcesId && !leetcodeId) {
       setIsLoading(false);
       toast.error("Please fill the required fields.");
       return;
     }
 
     axios
-      .get("api/v1/userContest/profile", {
+      .get(BASE_URL + "/api/v1/userContest/profile", {
         params: {
           codeforceId: userHandle.codeforcesId,
           leetcodeId: userHandle.leetcodeId,
@@ -65,16 +67,14 @@ const Profile = () => {
 
         if (res.data && res.data.codeforce)
           setCodeforceData(res.data.codeforce);
-        // console.log("res.data", res.data);
-        // console.log("res.data.codeforces", res.data.codeforce);
-        // console.log("codeforcesData", codeforceData);
+
         if (res.data && res.data.leetcode) setleetcodeData(res.data.leetcode);
 
         setfetch(true);
         setIsLoading(false);
-        // console.log(res.data);
-        console.log(leetcodeData, codeforceData);
-        // console.log({codeforceData.userName});
+
+        console.log("eetcodadfasdf---> ", leetcodeData);
+
       })
       .catch((err) => {
         setIsLoading(false);
@@ -113,10 +113,9 @@ const Profile = () => {
           </form>
         )}
       </div>
-      <div className="user-profile">
+      <div className="user-profile" style={{display:'flex',justifyContent:'space-around'}}>
         <div className="leetcode">
-          {" "}
-          {codeforceData && (
+          {(leetcodeData && leetcodeData.userName) && (
             <div>
               <h3>LeetCode</h3>
               <ProfileRender data={leetcodeData} />
@@ -124,7 +123,7 @@ const Profile = () => {
           )}
         </div>
         <div className="codeforce">
-          {codeforceData && (
+          {(codeforceData && codeforceData.userName) && (
             <div>
               <h3>Codeforces</h3>
               <ProfileRender data={codeforceData} />
@@ -157,41 +156,46 @@ const Profile = () => {
 
 const ProfileRender = ({ data }) => {
   const { userName, userProfile } = data;
-  const isCodeforces = userProfile.rank !== undefined;
-  const isLeetCode = userProfile.globalRanking !== undefined;
 
+  let isCodeforces = false,isLeetcode=false;
+  if (userProfile && userProfile.rank) {
+    isCodeforces = true;
+  }
+ if(userProfile && userProfile.globalRanking)
+  isLeetcode=true;
   return (
-    <div
-      className={`profile-card ${
-        isCodeforces && isLeetCode ? "with-divider" : ""
-      }`}>
-      <div className="profile">
-        <h2>{userName}</h2>
-        <p>Rating: {userProfile.rating}</p>
 
-        {isCodeforces && (
-          <div className="codeforces">
-            <p>Rank: {userProfile.rank}</p>
-            <p>Max Rating: {userProfile.maxRating}</p>
-            <p>Max Rank: {userProfile.maxRank}</p>
-            <p>Friends: {userProfile.friends}</p>
-            <p>Contests Attended: {userProfile.attended}</p>
+    <div className="profile-container" >
+      {isCodeforces && (
+        <div className="codeforces" >
+          <div className="avatar-logo">
+            <img src={codeforces_png} alt={"codeforces"} />
           </div>
-        )}
-
-        {isCodeforces && isLeetCode && <div className="divider"></div>}
-
-        {isLeetCode && (
-          <div className="leetcode">
-            <p>Global Ranking: {userProfile.globalRanking}</p>
-            <p>Rating: {userProfile.rating}</p>
-            <p>Top Percentage: {userProfile.topPercentage}</p>
-            <p>Total Participants: {userProfile.totalParticipants}</p>
-            <p>Contests Attended: {userProfile.attendedContestsCount}</p>
+          <h2>{userName}</h2>
+          <p>Rating: {userProfile?.rating}</p>
+          <p>Rank: {userProfile.rank}</p>
+          <p>Max Rating: {userProfile.maxRating}</p>
+          <p>Max Rank: {userProfile.maxRank}</p>
+          <p>Friends: {userProfile.friends}</p>
+          <p>Contests Attended: {userProfile.attended}</p>
+        </div>
+      )}
+      {isLeetcode && (
+        <div className="leetcode">
+          <div className="avatar-logo">
+            <img src={leetcode_png} alt={"leetcode"} />
           </div>
-        )}
-      </div>
+          <h2>{userName}</h2>
+          <p>Rating: {userProfile?.rating}</p>
+          <p>Global Ranking: {userProfile.globalRanking}</p>
+          <p>Rating: {userProfile?.rating}</p>
+          <p>Top Percentage: {userProfile.topPercentage}</p>
+          <p>Total Participants: {userProfile.totalParticipants}</p>
+          <p>Contests Attended: {userProfile.attendedContestsCount}</p>
+        </div>
+      )}
     </div>
+
   );
 };
 

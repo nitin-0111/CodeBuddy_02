@@ -1,49 +1,59 @@
-.user-profile {
-  flex-direction: row;
-}
-.user-profile .profile-card {
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-.user-profile .profile-card:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-.user-profile .profile-card.codeforces {
-  background-color: #f6f6f6;
-}
-.user-profile .profile-card.codeforces h3 {
-  color: #ff0000;
-}
-.user-profile .profile-card.leetcode {
-  background-color: #f0f8ff;
-}
-.user-profile .profile-card.leetcode h3 {
-  color: #0099ff;
-}
-.user-profile .profile-card .profile h2 {
-  margin-bottom: 5px;
-}
-.user-profile .profile-card .profile h3 {
-  margin-bottom: 5px;
-  font-size: 18px;
-}
-.user-profile .profile-card .profile p {
-  margin: 2px 0;
-}
-.user-profile .profile-card.with-divider {
+.profile-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
-.user-profile .profile-card.with-divider .codeforces,
-.user-profile .profile-card.with-divider .leetcode {
-  flex-basis: 45%;
+.profile-container .codeforces,
+.profile-container .leetcode {
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
-.user-profile .profile-card.with-divider .codeforces:first-child,
-.user-profile .profile-card.with-divider .leetcode:first-child {
-  border-right: 1px solid #ccc;
-  padding-right: 10px;
-  margin-right: 10px;
+.profile-container .codeforces:hover,
+.profile-container .leetcode:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.profile-container .codeforces .avatar-logo,
+.profile-container .leetcode .avatar-logo {
+  border: 1px solid gray;
+  border-radius: 50%;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.profile-container .codeforces .avatar-logo img,
+.profile-container .leetcode .avatar-logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profile-container .codeforces h2,
+.profile-container .leetcode h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.profile-container .codeforces p,
+.profile-container .leetcode p {
+  margin-bottom: 5px;
+}
+.profile-container .codeforces {
+  border-color: #007bff;
+}
+.profile-container .codeforces .avatar-logo {
+  border-color: #007bff;
+}
+.profile-container .leetcode {
+  border-color: #28a745;
+}
+.profile-container .leetcode .avatar-logo {
+  border-color: #28a745;
 }/*# sourceMappingURL=ProfileRender.css.map */

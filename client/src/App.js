@@ -86,10 +86,10 @@ const VContest = () => {
     navigate("/vcontest/getHandle");
   }, []);
   return (
-    <div>
-      
-      <Outlet />
-    </div>
+    <div style={{ height: 'calc(100vh - 140px)' }}>
+    <Outlet />
+  </div>
+  
   );
 };
 export default App;

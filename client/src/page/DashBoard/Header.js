@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <div className="Container">
       <div className="Logo">
-        <Link to="/">CodeBuddy</Link>
+        <Link to="/" style={{color:"white"}}>CodeBuddy</Link>
       </div>
       <ul>
         

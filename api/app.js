@@ -44,9 +44,15 @@ app.use(xss());
 
 app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET));
+app.get("/", (req, res) => {
+  res.json({ msg: 'Server is Up ...' });
+});
+
+
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/userContest", userContestRouter);
 app.use("/api/v1/vcontest/", vContestRouter);
+
 
 
 app.use(notFoundMiddleware);

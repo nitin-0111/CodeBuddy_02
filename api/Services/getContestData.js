@@ -97,7 +97,7 @@ const getCodeforcesData = async (username) => {
     data.userProfile.attended = data.Contest.length;
     // data.Contest.;
 
-    console.log(data);
+    // console.log(data);
     
   } catch (err) {
     return { msg: err };

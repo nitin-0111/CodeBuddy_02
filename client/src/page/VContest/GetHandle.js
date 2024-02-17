@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loading from "../../components/CircularLoader";
 import "./CSS/GetHandles/getHandles.css"
+
 const CodeforcesURL = "https://codeforces.com/api/user.info?handles=";
 const GetHandle = () => {
   const navigate = useNavigate();
@@ -48,9 +49,6 @@ const GetHandle = () => {
       {isLoading ? (
         <Loading />
       ) : (
-      
-
-        <div>
           <div className="fullscreen">
             <div className="content">
               <h1>Practice interactively </h1>
@@ -74,7 +72,6 @@ const GetHandle = () => {
               </form>
             </div>
           </div>
-        </div>
       )}
     </div>
   );

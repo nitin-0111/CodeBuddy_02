@@ -15,6 +15,7 @@ import {
   leetcode_png,
   topcoder_png,
 } from "./contest_images";
+import { BASE_URL } from "../../env";
 
 const hostSitesData = [
   {
@@ -109,7 +110,7 @@ const Contest = () => {
         : 3;
 
     axios
-      .post("/api/v1/userContest/contest-list", {
+      .post(BASE_URL+"/api/v1/userContest/contest-list", {
         host: host,
         today: today,
         duration: duration,
