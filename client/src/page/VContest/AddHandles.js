@@ -23,7 +23,7 @@ const AddHandles = () => {
 
   const handleList = Array.from(handles).map((handle) => (
     <li key={handle}>
-      {">"}
+     
       {handle}
     </li>
   ));

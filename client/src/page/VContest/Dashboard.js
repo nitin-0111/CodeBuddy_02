@@ -5,6 +5,7 @@ import "./CSS/DashBoard/DashBoard.css";
 
 import { redirect, useNavigate, useParams } from "react-router-dom";
 import RenderContestList from "./RenderContestList";
+import { BASE_URL } from "../../env";
 
 // import M from "materialize-css";
 const Dashboard = () => {
@@ -15,11 +16,11 @@ const Dashboard = () => {
   useEffect(() => {
     async function getContestList() {
       try {
-        let data = await axios.get("/api/v1/vcontest/getContestList/" + handle);
+        let data = await axios.get(BASE_URL + "/api/v1/vcontest/getContestList/" + handle);
         data = data.data;
         console.log("data=>", data);
         setList(data);
-      } catch (error) {}
+      } catch (error) { }
     }
     getContestList();
   }, []);
@@ -55,11 +56,9 @@ const Dashboard = () => {
           </div>
         </div>
       </form>
-
-      {/* <div>
-
-     </div> */}
-      {ContestList && <RenderContestList List={ContestList} handle={handle} />}
+      <div className="" style={{display:"flex", justifyContent:"space-around"}}>
+        {ContestList && <RenderContestList List={ContestList} handle={handle} />}
+      </div>
     </div>
   );
 };

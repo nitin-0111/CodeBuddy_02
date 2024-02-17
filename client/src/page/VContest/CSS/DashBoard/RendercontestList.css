@@ -1,37 +1,28 @@
-.renderList .collection-header h5 {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-}
-.renderList .contest-item {
-  margin: 15px 0;
-  padding: 15px;
-  background-color: #f4f4f4;
+.renderList .collection-List {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid;
   border-radius: 8px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
 }
-.renderList .contest-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+.renderList .collection-List .contest-item {
+  min-width: 300px;
+  margin: 10px;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
 }
-.renderList .contest-item .card-content .row {
-  margin: 5px 0;
+.renderList .collection-List .contest-item .card-content .info-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
 }
-.renderList .contest-item .card-content .row .col-label {
+.renderList .collection-List .contest-item .card-content .info-row .info-label {
   font-weight: bold;
+  width: 120px;
 }
-.renderList .contest-item .card-content .row .col-data {
-  margin-left: 10px;
-}
-.renderList .contest-item .card-content .go-to-room-btn {
-  padding: 5px 10px;
-  background-color: #ff00bb;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.renderList .contest-item .card-content .go-to-room-btn:hover {
-  background-color: #5a0249;
+.renderList .collection-List .contest-item .card-content .info-row .info-value {
+  flex-grow: 1;
 }/*# sourceMappingURL=RendercontestList.css.map */

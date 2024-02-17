@@ -170,7 +170,7 @@ const CreateContest = () => {
             onClick={() => {
               navigate(`/vcontest/AddHandle/${RoomId}`);
             }}>
-            {" "}
+           
             Go to Contest Area
           </button>
 
