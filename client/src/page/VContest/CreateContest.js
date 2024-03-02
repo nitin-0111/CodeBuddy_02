@@ -26,7 +26,7 @@ const CreateContest = () => {
     setloader("Creating it ....");
     e.preventDefault();
     try {
-      const response = await axios.get("/api/v1/vcontest/getRoomId");
+      const response = await axios.get(BASE_URL+"/api/v1/vcontest/getRoomId");
       const Id = response.data.roomId;
       setroomId(Id);
 
@@ -45,7 +45,7 @@ const CreateContest = () => {
       };
       setroomId(Id);
       console.log(postData);
-      const data = await axios.post("/api/v1/vcontest/createRoom", postData);
+      const data = await axios.post(BASE_URL+"/api/v1/vcontest/createRoom", postData);
       console.log(data);
 
       setloader("Created");
