@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Navigate, Redirect, useNavigate, useParams } from "react-router-dom";
 import "./CSS/Lobby/lobby.css"; // Import the CSS file for styling
+import { BASE_URL } from "../../env";
 
 const Lobby = () => {
   const navigate = useNavigate();

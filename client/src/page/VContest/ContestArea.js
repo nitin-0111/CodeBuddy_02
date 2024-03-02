@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link, Outlet, useParams } from "react-router-dom";
 // import Wrapper from "../../assets/wrappers/LandingPage";
 import styled from "styled-components";
+import { BASE_URL } from "../../env";
 // import "./CSS/ContestArea/navBar.css"
 const ContestArea = () => {
   const [Data, setData] = useState({});

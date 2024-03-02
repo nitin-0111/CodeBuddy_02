@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import {  useLocation, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import styled from 'styled-components';
+import { BASE_URL } from '../env';
 // import { } from 'react-router-dom';
 
 function useQuery() {
@@ -21,7 +22,7 @@ const VerifyEmail = () => {
   const verifyToken=async()=>{
     setLoading(true);
     try{
-        const { data } = await axios.post('api/v1/auth/verify-email', {
+        const { data } = await axios.post(BASE_URL+'api/v1/auth/verify-email', {
             verificationToken: query.get('token'),
             email: query.get('email'),
           });

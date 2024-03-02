@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import styled from "styled-components";
 import { FormRow } from "../components";
+import { BASE_URL } from "../env";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -34,7 +35,7 @@ const ResetPassword = () => {
     }
     setLoading(true);
     try {
-      await axios.post("/api/v1/auth/reset-password", {
+      await axios.post(BASE_URL+"/api/v1/auth/reset-password", {
         password: creditional.password,
         token: query.get("token"),
         email: query.get("email"),

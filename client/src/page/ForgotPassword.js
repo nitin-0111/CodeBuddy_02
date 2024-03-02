@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { FormRow } from "../components";
+import { BASE_URL } from "../env";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState();
@@ -26,7 +27,7 @@ const ForgotPassword = () => {
     }
 
     try {
-      const { data } = await axios.post("/api/v1/auth/forgot-password", {
+      const { data } = await axios.post(BASE_URL+"/api/v1/auth/forgot-password", {
         email,
       });
       toast.success("Success");

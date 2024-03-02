@@ -4,6 +4,7 @@ import moment from "moment";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import { BASE_URL } from "../../env";
 
 // import "./CSS/CreateContest/createcontest.css"
 const CreateContest = () => {
