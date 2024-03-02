@@ -15,7 +15,7 @@ const ProtectedContestRoute = ({ children }) => {
     }
     async function getRoomProbs() {
       try {
-        let data = await axios.get("/api/v1/vcontest/getRoomProbs/" + RoomId);
+        let data = await axios.get(BASE_URL+"/api/v1/vcontest/getRoomProbs/" + RoomId);
         data = data.data;
         console.log(data.handles);
         if (!data) {
