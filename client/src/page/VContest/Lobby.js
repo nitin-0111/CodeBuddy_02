@@ -20,7 +20,7 @@ const Lobby = () => {
   useEffect(() => {
     async function getData() {
       try {
-        let room = await axios.get("/api/v1/vcontest/getRoomProbs/" + RoomId);
+        let room = await axios.get(BASE_URL+"/api/v1/vcontest/getRoomProbs/" + RoomId);
         room = room.data;
         setTargetTimestamp(room.Start_time);
         setLoading(false); // Data fetched, set loading to false
