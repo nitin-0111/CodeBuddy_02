@@ -12,7 +12,7 @@ const ContestArea = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(
+        const response = await axios.get(BASE_URL+
           "/api/v1/vcontest/getRoomProbs/" + RoomId
         );
         const data = response.data;
