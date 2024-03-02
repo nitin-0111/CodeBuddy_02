@@ -36,7 +36,7 @@ const AddHandles = () => {
     async function getRoomProbs() {
       setIsLoading(true);
       try {
-        const response = await axios.get(
+        const response = await axios.get(BASE_URL+
           `/api/v1/vcontest/getRoomProbs/${RoomId}`
         );
         setData(response.data);
