@@ -114,37 +114,38 @@ const AddHandles = () => {
 
   return (
     <>
-      {/* info about contest like num, dur,date and time, diff range  */}
-      <div className="addHandles">
-        <div className="manualHandles">
-          <h4>Add User Handles</h4>
-          <a
-            className="tooltipped"
-            data-position="right"
-            data-tooltip="Enter the Codeforces handles of users you want to create a room with. Don't forget to hit enter after each handle!"
-          >
-            <i className="material-icons">info_outline</i>
-          </a>
-        </div>
+     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+  <div className="addHandles">
+    <div className="manualHandles">
+     <h4>Add CodeForces Handles of Peer Participants</h4>
 
-        <div className="chips chips-placeholder" />
-        <div className="getQuestions">
-          <button
-            className="waves-effect waves-light btn questionsButton"
-            onClick={checkhandles}
-          >
-            {loader}
-          </button>
+      <a
+        className="tooltipped"
+        data-position="right"
+        data-tooltip="Enter the Codeforces handles of users you want to create a room with. Don't forget to hit enter after each handle!"
+      >
+        <i className="material-icons">info_outline</i>
+      </a>
+    </div>
+
+    <div className="chips chips-placeholder" />
+    <div className="getQuestions">
+      <button
+        className="waves-effect waves-light btn questionsButton"
+        onClick={checkhandles}
+      >
+        {loader}
+      </button>
       <button onClick={handlePublish}>Publish</button>
-        </div>
+    </div>
 
-        <div>
-          <h4>Added Handles</h4>
-          <ul>{handleList}</ul>
-        </div>
-      </div>
+    <div>
+      <h4>Added Handles</h4>
+      <ul>{handleList}</ul>
+    </div>
+  </div>
+</div>
 
-      {/* button to publish contest */}
     </>
   );
 };
