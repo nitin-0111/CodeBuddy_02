@@ -18,7 +18,7 @@ const CreateContest = () => {
   const [Created, setCreated] = useState(false);
   const [selectedDateTime, setSelectedDateTime] = useState(() => {
     const initialTime = new Date();
-    initialTime.setMinutes(initialTime.getMinutes() + 5);
+    initialTime.setMinutes(initialTime.getMinutes() + 0.1);
     return initialTime;
   });
   const [RoomId, setroomId] = useState(null);
