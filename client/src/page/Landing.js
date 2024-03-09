@@ -75,16 +75,22 @@ const Landing = () => {
 
             <button
               disabled={isLoading}
-              onClick={() => {
-                dispatch(loginUser({ email: "test@abc.in", password: "123456" }));
-                setTimeout(() => {
-                  navigate("/");
-                }, 2000);
-
-                return;
-              }} className="btn waves-light waves-effect" style={{ fontWeight: 'bold' }}>
-              {isLoading ? "Loading... " : "Demo-User"}
+              onClick={async () => {
+                try {
+                  await dispatch(loginUser({ email: "test@abc.in", password: "123456" }));
+                  setTimeout(() => {
+                    navigate("/");
+                  }, 1000);
+                } catch (error) {
+                  console.error("Error:", error);
+                }
+              }}
+              className="btn waves-light waves-effect"
+              style={{ fontWeight: 'bold' }}
+            >
+              {isLoading ? "Loading..." : "Demo-User"}
             </button>
+
           </div>
         </div>
         {mainImg.map((image, index) => (
@@ -93,8 +99,9 @@ const Landing = () => {
             src={image.img}
             alt={image.title}
             className='img main-img'
-            style={{ display: index === currentIndex ? 'block' : 'none' 
-            
+            style={{
+              display: index === currentIndex ? 'block' : 'none'
+
             }}
           />
         ))}

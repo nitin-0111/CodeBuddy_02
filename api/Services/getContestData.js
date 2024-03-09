@@ -4,14 +4,41 @@ const axios = require("axios");
 const graphqlUrl = "https://leetcode.com/graphql";
 
 const getLeecodeData = async (username) => {
-  const query = `{userContestRanking(username: "${username}") {
+
+  // const query = `{userContestRankingInfo(username: "${username}") {
+  //       attendedContestsCount
+  //       rating
+  //       globalRanking
+  //       totalParticipants
+  //       topPercentage
+  //     }
+  //     userContestRankingHistory(username: "${username}") {
+  //       attended
+  //       trendDirection
+  //       problemsSolved
+  //       totalProblems
+  //       finishTimeInSeconds
+  //       rating
+  //       ranking
+  //       contest {
+  //         title
+  //         startTime
+  //       }
+  //     }
+  //   }`;
+  const query = `
+    query userContestRankingInfo($username: String!) {
+      userContestRanking(username: $username) {
         attendedContestsCount
         rating
         globalRanking
         totalParticipants
         topPercentage
+        badge {
+          name
+        }
       }
-      userContestRankingHistory(username: "${username}") {
+      userContestRankingHistory(username: $username) {
         attended
         trendDirection
         problemsSolved
@@ -24,9 +51,13 @@ const getLeecodeData = async (username) => {
           startTime
         }
       }
-    }`;
+    }
+  `;
   try {
-    let res = await axios.post(graphqlUrl, { query });
+    const res = await axios.post(graphqlUrl, {
+      query,
+      variables: { username },
+    });
     res = res.data.data;
 
     let contestInfo = res.userContestRankingHistory;
@@ -60,13 +91,15 @@ const getLeecodeData = async (username) => {
     // data.Contest.sort((a, b) => new Date(b.time) - new Date(a.time));
 
 
-    // console.log(data);
+    console.log(data);
     return data;
   } catch (err) {
-    // console.log("err");
+    console.log("err");
+
     return { msg: err };
   }
 };
+getLeecodeData('nsp-0111');
 
 const getCodeforcesData = async (username) => {
   const Base_url = `https://codeforces.com/api/`;
