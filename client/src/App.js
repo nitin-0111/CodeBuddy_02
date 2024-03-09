@@ -45,7 +45,7 @@ function App() {
           <Route path="contest-list" element={<Contest />} />
 
           {/* v_contest creatation  routes */}
-          
+
           <Route path="/vcontest" element={<VContest />}>
             <Route index path="getHandle" element={<GetHandle />} />
             <Route path="dashboard/:handle" element={<Dashboard />} />
@@ -57,7 +57,8 @@ function App() {
             element={<ProtectedContestRoute><ContestPage /></ProtectedContestRoute>}>
             <Route index element={<Lobby />} />
             <Route path="ContestArea" element={<ContestArea />}>
-              <Route index path="problems" element={<Problems />} />
+              <Route index path="" element={<Problems />} />
+              <Route  path="problems" element={<Problems />} />
               <Route path="standings" element={<Standings />} />
             </Route>
           </Route>
