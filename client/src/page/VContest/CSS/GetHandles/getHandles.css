@@ -16,7 +16,7 @@
   margin-bottom: 10px;
 }
 .content .heading {
-  color: #c960fa;
+  color: var(--primary-700);
 }
 .content p {
   font-size: 18px;
@@ -30,7 +30,7 @@
 }
 .content form input[type=text] {
   padding: 10px;
-  border: 2px solid #c960fa;
+  border: 2px solid var(--primary-600);
   border-radius: 8px;
   font-size: 16px;
   color: #333;
@@ -54,7 +54,7 @@
   font-size: 16px;
   font-weight: bold;
   color: #fff;
-  background-color: #c960fa;
+  background-color: var(--primary-600);
   cursor: pointer;
   outline: none;
   display: flex;
@@ -62,7 +62,7 @@
   transition: background-color 0.3s ease-in-out;
 }
 .content form button:hover {
-  background-color: #8b39d5;
+  background-color: var(--primary-400);
 }
 .content form button i {
   margin-right: 5px;
