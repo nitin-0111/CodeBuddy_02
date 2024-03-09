@@ -20,7 +20,7 @@
   background-color: var(--primary-700) !important;
 }
 .page .waves-effect.waves-light.btn:hover {
-  background-color: #ec6fd9 !important;
+  background-color: var(--primary-300) !important;
 }
 @media (min-width: 992px) {
   .page {

@@ -28,7 +28,7 @@
   cursor: pointer;
 }
 .coding-contest-filter .host-sites ul li.selected {
-  background-color: rgba(167, 96, 200, 0.5294117647);
+  background-color: var(--primary-400);
   color: #fff;
 }
 .coding-contest-filter .host-sites ul li img {
@@ -47,7 +47,7 @@
   cursor: pointer;
 }
 .coding-contest-filter .today .toggle button.selected {
-  background-color: rgba(167, 96, 200, 0.5294117647);
+  background-color: var(--primary-400);
   color: #fff;
 }
 .coding-contest-filter .today .toggle button:not(.selected) {
@@ -66,6 +66,6 @@
   cursor: pointer;
 }
 .coding-contest-filter .duration ul li.selected {
-  background-color: rgba(167, 96, 200, 0.5294117647);
+  background-color: var(--primary-400);
   color: #fff;
 }/*# sourceMappingURL=constestList.css.map */

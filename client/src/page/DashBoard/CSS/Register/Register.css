@@ -27,7 +27,7 @@
   font-size: large;
 }
 .full-page .btn:hover {
-  background-color: #ec6fd9 !important;
+  background-color: var(--primary-400) !important;
 }
 .full-page .member-btn {
   background: transparent;

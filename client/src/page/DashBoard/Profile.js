@@ -107,7 +107,7 @@ const Profile = () => {
             <button
               className="btn btn-block waves-effect waves-light"
               disabled={isLoading}
-              style={{ backgroundColor: "#b7167c" }}>
+              style={{ backgroundColor: 'var(--primary-700)' }}>
               <span>Submit</span> <IoSend />
             </button>
           </form>

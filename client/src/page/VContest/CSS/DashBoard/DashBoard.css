@@ -29,7 +29,7 @@
 }
 .dashboard .formToJoinViaInp .input-field input.validate:focus {
   outline: none;
-  border-bottom: 1px solid #007bff;
+  border-bottom: 1px solid var(--primary-700);
 }
 .dashboard .formToJoinViaInp .input-field label {
   font-size: 14px;
@@ -48,7 +48,7 @@
 .dashboard .formToJoinViaInp .input-field button.create-contest-btn {
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: #b7167c;
+  background-color: var(--primary-700);
   color: #ffffff;
   border: none;
   border-radius: 4px;
@@ -56,5 +56,5 @@
   transition: background-color 0.3s;
 }
 .dashboard .formToJoinViaInp .input-field button.create-contest-btn:hover {
-  background-color: #5a0249;
+  background-color: var(--primary-400);
 }/*# sourceMappingURL=DashBoard.css.map */

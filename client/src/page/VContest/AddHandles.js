@@ -13,7 +13,7 @@ const AddHandles = () => {
   const handle = localStorage.getItem("handle") || "";
 
   const { RoomId } = useParams();
-  const [loader, setLoader] = useState("Add Handles");
+  const [loader, setLoader] = useState("+ Add Handles");
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [handles, setHandles] = useState(new Set());
@@ -24,7 +24,7 @@ const AddHandles = () => {
 
   const handleList = Array.from(handles).map((handle) => (
     <li key={handle}>
-     
+
       {handle}
     </li>
   ));
@@ -37,12 +37,12 @@ const AddHandles = () => {
     async function getRoomProbs() {
       setIsLoading(true);
       try {
-        const response = await axios.get(BASE_URL+
+        const response = await axios.get(BASE_URL +
           `/api/v1/vcontest/getRoomProbs/${RoomId}`
         );
         setData(response.data);
         // console.log(response.data,data);
-      } catch (err) {}
+      } catch (err) { }
       setIsLoading(false);
     }
     getRoomProbs();
@@ -57,21 +57,23 @@ const AddHandles = () => {
   }, []);
 
   const handlePublish = async () => {
+    setIsLoading(true);
     try {
-      setIsLoading(true);
       setLoader("loading...");
       const userHandles = [...handles];
       // console.log(userHandles);
-      const response = await axios.post(BASE_URL+"/api/v1/vcontest/publishContest", {
+      const response = await axios.post(BASE_URL + "/api/v1/vcontest/publishContest", {
         userHandles,
         RoomId,
       });
       navigate(`/ContestArea/${RoomId}/${handle}`);
       // console.log(response.data);
-    } catch (err) {}
+    } catch (err) { }
+    setIsLoading(false);
   };
 
   const checkhandles = () => {
+    setIsLoading(true);
     setLoader("Validating Handles...");
     const instance = M.Chips.getInstance(elem).chipsData;
     // console.log(instance, instance.chipsData);
@@ -79,6 +81,7 @@ const AddHandles = () => {
       toast.error("Limit is Upto 10 Handles!");
       return;
     }
+    setIsLoading(false);
     checkhandle(instance);
   };
 
@@ -107,44 +110,44 @@ const AddHandles = () => {
         break;
       }
     }
-    setLoader("Add Handles");
+    setLoader("+Add Handles");
   };
 
   const elem = document.querySelector(".chips");
 
   return (
     <>
-     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-  <div className="addHandles">
-    <div className="manualHandles">
-     <h4>Add CodeForces Handles of Peer Participants</h4>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <div className="addHandles">
+          <div className="manualHandles">
+            <h4>Add CodeForces Handles of Peer Participants</h4>
 
-      <a
-        className="tooltipped"
-        data-position="right"
-        data-tooltip="Enter the Codeforces handles of users you want to create a room with. Don't forget to hit enter after each handle!"
-      >
-        <i className="material-icons">info_outline</i>
-      </a>
-    </div>
+            <a
+              className="tooltipped"
+              data-position="right"
+              data-tooltip="Enter the Codeforces handles of users you want to create a room with. Don't forget to hit enter after each handle!"
+            >
+              <i className="material-icons">info_outline</i>
+            </a>
+          </div>
 
-    <div className="chips chips-placeholder" />
-    <div className="getQuestions">
-      <button
-        className="waves-effect waves-light btn questionsButton"
-        onClick={checkhandles}
-      >
-        {loader}
-      </button>
-      <button onClick={handlePublish}>Publish</button>
-    </div>
+          <div className="chips chips-placeholder" />
+          <div className="getQuestions">
+            <button
+              disabled={isLoading}
+              onClick={checkhandles}
+            >
+              {loader}
+            </button>
+            <button onClick={handlePublish} disabled={isLoading}>Publish</button>
+          </div>
 
-    <div>
-      <h4>Added Handles</h4>
-      <ul>{handleList}</ul>
-    </div>
-  </div>
-</div>
+          <div>
+            <h4>Added Handles</h4>
+            <ul>{"------------------------------ "} {handleList}</ul>
+          </div>
+        </div>
+      </div>
 
     </>
   );

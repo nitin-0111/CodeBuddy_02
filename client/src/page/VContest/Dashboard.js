@@ -56,7 +56,7 @@ const Dashboard = () => {
           </div>
         </div>
       </form>
-      <div className="" style={{display:"flex", justifyContent:"space-around"}}>
+      <div  style={{width:'90%',display:"flex", flexDirection:'row', justifyContent:"space-around"}}>
         {ContestList && <RenderContestList List={ContestList} handle={handle} />}
       </div>
     </div>

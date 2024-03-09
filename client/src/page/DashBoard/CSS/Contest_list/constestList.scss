@@ -30,7 +30,7 @@
         cursor: pointer;
   
         &.selected {
-          background-color: #a760c887;
+          background-color: var(--primary-400);
           color: #fff;
         }
   
@@ -71,7 +71,7 @@
     }
     
     .today .toggle button.selected {
-      background-color: #a760c887;
+      background-color: var(--primary-400);
       color: #fff;
     }
     
@@ -93,7 +93,7 @@
         cursor: pointer;
   
         &.selected {
-          background-color:#a760c887;
+          background-color:var(--primary-400);
           color: #fff;
         }
       }

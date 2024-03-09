@@ -53,16 +53,17 @@ const GetHandle = () => {
             <div className="content">
               <h1>Practice interactively </h1>
               <h1 className="heading">CodeBuddy</h1>
-              <p>Add Your CodeForces Handle...</p>
+             
               <form>
                 <input
                   type="text"
                   name="handle"
-                  placeholder="Codeforces Handle"
+                  placeholder="Add Your Codeforces Handle..."
                   required
                   onChange={(e) => {
                     setUserName(e.target.value);
                   }}
+                  
                 />
                 <button type="submit" onClick={getData}>
                   {loader}

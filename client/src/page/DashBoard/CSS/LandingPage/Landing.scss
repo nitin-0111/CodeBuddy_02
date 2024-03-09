@@ -25,7 +25,7 @@ $grey-600: var(--grey-600);
     display: none;
   }
 
-  $custom-hover-color: lighten(#d81dbc, 20%);
+  $custom-hover-color: var(--primary-300);
   .waves-effect.waves-light.btn {
     background-color: $primary-700 !important;
 

@@ -13,7 +13,7 @@ const ContestArea = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(BASE_URL+
+        const response = await axios.get(BASE_URL +
           "/api/v1/vcontest/getRoomProbs/" + RoomId
         );
         const data = response.data;
@@ -89,10 +89,20 @@ const ContestArea = () => {
 
   return (
     <div>
-      <div className="timer"></div>
+
 
       <div>
-        <NavigationBar />
+        <div className="nav-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 20px 0px 20px', backgroundColor: '#f0f0f0', borderBottom: '1px solid #ccc' }}>
+          <div className="Left" style={{ display: 'flex', gap: '20px'}}>
+            <Link to="problems" style={{color:'var(--primary-700)', fontWeight:"bold"}}> <h5 >Problems</h5></Link>
+            <Link to="standings" style={{color:'var(--primary-700)', fontWeight:"bold"}}><h5>Standings </h5></Link>
+           
+          </div>
+          <div className="right" style={{ display: 'flex', alignItems: 'center' }}>
+            <div className="timer" style={{ backgroundColor: 'var(--primary-600)', color: '#fff', padding: '5px 10px', borderRadius: '5px', fontWeight: 'bold' }}></div>
+          </div>
+        </div>
+
         <Outlet context={Data} />
       </div>
     </div>
@@ -104,53 +114,37 @@ const ContestArea = () => {
 
 
 
-const NavigationBar = () => {
-  return (
-    <Wrapper >
-      {/* <nav> */}
-      <ul>
-        <li>
-          <Link to="problems">Problems</Link>
-        </li>
-        <li>
-          <Link to="standings">Standings</Link>
-        </li>
-      </ul>
-      {/* </nav> */}
-    </Wrapper>
-  );
-};
 
 
-const Wrapper = styled.nav`
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
-  padding: 1rem;
-  font-weight: bold;
-  body{
-    flex-direction:row;
-  }
+// const Wrapper = styled.nav`
+//   background-color: #f0f0f0;
+//   border: 1px solid #ddd;
+//   padding: 1rem;
+//   font-weight: bold;
+//   body{
+//     flex-direction:row;
+//   }
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+//   ul {
+//     list-style: none;
+//     padding: 0;
+//     margin: 0;
+//     display: flex;
 
-    li {
-      margin-right: 1rem;
+//     li {
+//       margin-right: 1rem;
 
-      a {
-        text-decoration: none;
-        color: #333;
+//       a {
+//         text-decoration: none;
+//         color: #333;
 
-        &:hover {
-          color: #007bff;
-        }
-      }
-    }
-  }
-`;
+//         &:hover {
+//           color: #007bff;
+//         }
+//       }
+//     }
+//   }
+// `;
 
 
 

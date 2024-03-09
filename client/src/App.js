@@ -45,16 +45,16 @@ function App() {
           <Route path="contest-list" element={<Contest />} />
 
           {/* v_contest creatation  routes */}
+          
           <Route path="/vcontest" element={<VContest />}>
             <Route index path="getHandle" element={<GetHandle />} />
             <Route path="dashboard/:handle" element={<Dashboard />} />
             <Route path="createContest/:handle" element={<CreateContest />} />
             <Route path="AddHandle/:RoomId" element={<AddHandles />} />
           </Route>
-
           <Route
             path="/ContestArea/:RoomId/:handle"
-            element={ <ProtectedContestRoute><ContestPage /></ProtectedContestRoute>}>
+            element={<ProtectedContestRoute><ContestPage /></ProtectedContestRoute>}>
             <Route index element={<Lobby />} />
             <Route path="ContestArea" element={<ContestArea />}>
               <Route index path="problems" element={<Problems />} />
@@ -87,9 +87,9 @@ const VContest = () => {
   }, []);
   return (
     <div style={{ height: 'calc(100vh - 140px)' }}>
-    <Outlet />
-  </div>
-  
+      <Outlet />
+    </div>
+
   );
 };
 export default App;

@@ -198,7 +198,7 @@ const Standings = () => {
     <div className="contest">
       <div className="timer"></div>
       <div className="standings">
-        <table className="striped responsive-table">
+        <table className="table-container" style={{ margin: '10px' }}>
           <thead>
             <tr>
               <th>Rank</th>

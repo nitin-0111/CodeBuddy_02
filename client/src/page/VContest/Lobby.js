@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Navigate, Redirect, useNavigate, useParams } from "react-router-dom";
 import "./CSS/Lobby/lobby.css"; // Import the CSS file for styling
 import { BASE_URL } from "../../env";
+import Loading from "../../components/CircularLoader";
 
 const Lobby = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Lobby = () => {
   useEffect(() => {
     async function getData() {
       try {
-        let room = await axios.get(BASE_URL+"/api/v1/vcontest/getRoomProbs/" + RoomId);
+        let room = await axios.get(BASE_URL + "/api/v1/vcontest/getRoomProbs/" + RoomId);
         room = room.data;
         setTargetTimestamp(room.Start_time);
         setLoading(false); // Data fetched, set loading to false
@@ -73,7 +74,12 @@ const Lobby = () => {
 
   if (loading) {
     // Show a loading message while fetching data
-    return <div>Loading...</div>;
+    return <center>
+      <div>
+        <Loading />
+        <span>Loading...</span>
+      </div>
+    </center>;
   }
 
   return (
