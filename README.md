@@ -16,7 +16,15 @@ A comprehensive web application built with the MERN stack, designed to be your p
 - Redux
 
   
-![ezgif com-gif-maker (1)](https://github.com/nitin-0111/CodeBuddy_02/assets/90493484/768e9269-8d2a-4397-add5-3ec60d7b0314)
+## Part-1
+https://github.com/nitin-0111/CodeBuddy_02/assets/90493484/30983b6a-54d3-4dc5-b5d2-4dd18d26339f
+
+
+
+## Part=2
+https://github.com/nitin-0111/CodeBuddy_02/assets/90493484/63869583-591e-4079-9765-fb44976c5863
+
+
 
 
 
