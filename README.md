@@ -14,6 +14,8 @@ A comprehensive web application built with the MERN stack, designed to be your p
 - MongoDB
 - Express
 - Redux
+- MUI
+- TailwindCSS
 
   
 ## Part-1
